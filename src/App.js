@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        Noty
       </header>
+      <div className="sheet">
+        <div className="sheet_line_set treble_clef">
+          <span className="sheet_lines">
+            <span className="sheet_notes-wrapper">
+
+            </span>
+          </span>
+        </div>
+
+        <div className="sheet_line_set bass_clef">
+            <span className="sheet_lines">
+              <span className="sheet_notes-wrapper">
+
+              </span>
+            </span>
+        </div>
+      </div>
     </div>
   );
 }

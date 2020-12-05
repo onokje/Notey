@@ -1,0 +1,99 @@
+$sheet-line-color: #000000;
+$sheet-note-color: #000000;
+$sheet-left-border-width: 4px;
+$_sheet-border: 1px solid $sheet-line-color;
+$_sheet-padding: 0.3em;
+$_sheet-note-width: $_sheet-padding + 0.1em;
+$_sheet-border-left: $sheet-left-border-width solid $sheet-line-color;
+$_sheet-border-right: 1px solid $sheet-line-color;
+
+@mixin font-size($size) {
+  font-size: #{$size/10}rem;
+}
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+
+div.sheet{
+  background-color: #ddd;
+  margin-top: 1.3em;
+  margin-bottom: 1.3em;
+  width: 300px;
+}
+
+div.sheet_line_set {
+
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin: 0.1em;
+
+  text-align: center;
+  line-height: 1.4;
+  @include font-size(30);
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &.treble_clef {
+    background-image: url('../images/trebleclef.png');
+    background-size: 65px;
+    background-repeat: no-repeat;
+    background-position: 0 10px;
+  }
+
+  &.bass_clef {
+    background-image: url('../images/bassclef.png');
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: 10px 33px;
+  }
+
+  .sheet_lines {
+    display: block;
+    position: relative;
+    border-top: $_sheet-border;
+    height: 0;
+    border-bottom: $_sheet-border;
+    padding-top: $_sheet-padding;
+    padding-bottom: $_sheet-padding + 0.03;
+    border-left: $_sheet-border-left;
+    border-right: $_sheet-border-right;
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: $_sheet-padding;
+      padding-bottom: $_sheet-padding + 0.03;
+      border-top: $_sheet-border;
+      border-left: $_sheet-border-left;
+      border-right: $_sheet-border-right;
+    }
+
+    &:after {
+      border-bottom: $_sheet-border;
+      position: relative;
+      left: -$sheet-left-border-width;
+    }
+
+    &:before {
+      position:absolute;
+      top: -0.35em;
+      left: -$sheet-left-border-width;
+    }
+  }
+
+
+}
