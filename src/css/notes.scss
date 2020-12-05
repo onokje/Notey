@@ -1,0 +1,244 @@
+@import "vars";
+
+.notes-wrapper {
+  $_width: 22em;
+  position: absolute;
+  width: $_width;
+  top: 0;
+  left: 50%;
+  margin-left: -$_width/2;
+}
+
+%_sheet-stick-down {
+  &:before {
+    content: '';
+    border-left: 2px solid $sheet-note-color;
+    height: 1em;
+    position: relative;
+    left: -(($_sheet-note-width/2)-0.02);
+    top: -0.01em;
+  }
+}
+
+%_sheet-stick-up {
+  &:before {
+    content: '';
+    border-right: 2px solid $sheet-note-color;
+    height: 1em;
+    position: relative;
+    left: (($_sheet-note-width/2)-0.02);
+    top: -1.1em;
+  }
+}
+
+.sheet-note {
+  position: absolute;
+  height: $_sheet-padding;
+  width: $_sheet-note-width;
+  background-color: $sheet-note-color;
+  border-radius: #{$_sheet-note-width "/" $_sheet-padding};
+  left: 2em;
+}
+
+%_note-extra-line {
+  left: -0.1em;
+  content: '';
+  position: absolute;
+  display: block;
+  width: $_sheet-note-width + 0.2;
+  border-top: $_sheet-border;
+}
+
+%_note-line-thru {
+  &:after {
+    @extend %_note-extra-line;
+    top: ($_sheet-padding/2);
+  }
+}
+
+%_note-line-above {
+  &:after {
+    @extend %_note-extra-line;
+    top: 0;
+  }
+}
+
+%_note-line-below {
+  &:after {
+    @extend %_note-extra-line;
+    top: ($_sheet-padding);
+  }
+}
+
+.treble_clef {
+  .sheet-note {
+
+    &.note-B3 {
+      @extend %_sheet-stick-up;
+      @extend %_note-line-above;
+      top: 1.25em;
+    }
+
+    &.note-C4 {
+      @extend %_sheet-stick-up;
+      @extend %_note-line-thru;
+      top: 1.1em;
+    }
+
+    &.note-D4 {
+      @extend %_sheet-stick-up;
+      top: 0.95em;
+    }
+
+    &.note-E4 {
+      @extend %_sheet-stick-up;
+      top: 0.80em;
+    }
+
+    &.note-F4 {
+      @extend %_sheet-stick-up;
+      top: 0.65em;
+    }
+
+    &.note-G4 {
+      @extend %_sheet-stick-up;
+      top: 0.5em;
+    }
+
+    &.note-A4 {
+      @extend %_sheet-stick-up;
+      top: 0.32em;
+    }
+
+    &.note-B4 {
+      @extend %_sheet-stick-down;
+      top: 0.13em;
+    }
+
+    &.note-C5 {
+      @extend %_sheet-stick-down;
+      top: -0.01em;
+    }
+
+    &.note-D5 {
+      @extend %_sheet-stick-down;
+      top: -0.16em;
+    }
+
+    &.note-E5 {
+      @extend %_sheet-stick-down;
+      top: -0.32em;
+    }
+
+    &.note-F5 {
+      @extend %_sheet-stick-down;
+      top: -0.47em;
+    }
+
+    &.note-G5 {
+      @extend %_sheet-stick-down;
+      top: -0.62em;
+    }
+
+    &.note-A5 {
+      @extend %_sheet-stick-down;
+      @extend %_note-line-thru;
+      top: -0.77em;
+    }
+
+    &.note-B5 {
+      @extend %_sheet-stick-down;
+      @extend %_note-line-below;
+      top: -0.92em;
+    }
+
+  }
+}
+
+.bass_clef {
+  .sheet-note {
+
+    &.note-D2 {
+      @extend %_sheet-stick-up;
+      @extend %_note-line-above;
+      top: 1.25em;
+    }
+
+    &.note-E2 {
+      @extend %_sheet-stick-up;
+      @extend %_note-line-thru;
+      top: 1.1em;
+    }
+
+    &.note-F2 {
+      @extend %_sheet-stick-up;
+      top: 0.95em;
+    }
+
+    &.note-G2 {
+      @extend %_sheet-stick-up;
+      top: 0.80em;
+    }
+
+    &.note-A2 {
+      @extend %_sheet-stick-up;
+      top: 0.65em;
+    }
+
+    &.note-B2 {
+      @extend %_sheet-stick-up;
+      top: 0.5em;
+    }
+
+    &.note-C3 {
+      @extend %_sheet-stick-up;
+      top: 0.32em;
+    }
+
+    &.note-D3 {
+      @extend %_sheet-stick-down;
+      top: 0.13em;
+    }
+
+    &.note-E3 {
+      @extend %_sheet-stick-down;
+      top: -0.01em;
+    }
+
+    &.note-F3 {
+      @extend %_sheet-stick-down;
+      top: -0.16em;
+    }
+
+    &.note-G3 {
+      @extend %_sheet-stick-down;
+      top: -0.32em;
+    }
+
+    &.note-A3 {
+      @extend %_sheet-stick-down;
+      top: -0.47em;
+    }
+
+    &.note-B3 {
+      @extend %_sheet-stick-down;
+      top: -0.62em;
+    }
+
+    &.note-C4 {
+      @extend %_sheet-stick-down;
+      @extend %_note-line-thru;
+      top: -0.77em;
+    }
+
+    &.note-D4 {
+      @extend %_sheet-stick-down;
+      @extend %_note-line-below;
+      top: -0.92em;
+    }
+
+
+
+
+  }
+}

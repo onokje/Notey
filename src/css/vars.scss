@@ -1,0 +1,8 @@
+$sheet-line-color: #000000;
+$sheet-left-border-width: 4px;
+$sheet-note-color: #000000;
+$_sheet-border: 1px solid $sheet-line-color;
+$_sheet-padding: 0.3em;
+$_sheet-border-left: $sheet-left-border-width solid $sheet-line-color;
+$_sheet-border-right: 1px solid $sheet-line-color;
+$_sheet-note-width: $_sheet-padding + 0.1em;

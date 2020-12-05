@@ -1,11 +1,4 @@
-$sheet-line-color: #000000;
-$sheet-note-color: #000000;
-$sheet-left-border-width: 4px;
-$_sheet-border: 1px solid $sheet-line-color;
-$_sheet-padding: 0.3em;
-$_sheet-note-width: $_sheet-padding + 0.1em;
-$_sheet-border-left: $sheet-left-border-width solid $sheet-line-color;
-$_sheet-border-right: 1px solid $sheet-line-color;
+@import "vars";
 
 @mixin font-size($size) {
   font-size: #{$size/10}rem;
@@ -94,6 +87,4 @@ div.sheet_line_set {
       left: -$sheet-left-border-width;
     }
   }
-
-
 }
