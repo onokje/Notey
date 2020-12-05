@@ -11,7 +11,7 @@ const getRandomNote = () => {
 
 function App() {
     const [currentNote, setCurrentNote] = useState(getRandomNote());
-    const [msg, setMsg] = useState('');
+    const [msg, setMsg] = useState(null);
 
     const bindKeys = () => Mousetrap.bind(['a','b','c','d','e','f','g'], keyPress);
     const unbindKeys = () => Mousetrap.unbind(['a','b','c','d','e','f','g']);
@@ -26,13 +26,12 @@ function App() {
     }
 
     const keyPress = (event) => {
-        console.log(event.key);
         if (currentNote.keyCode === event.key) {
-            setMsg('Correct!');
+            setMsg({correct: true, note: currentNote.name});
             unbindKeys();
             setTimeout(reset ,1000);
         } else {
-            setMsg(`Sorry, it's not ${event.key}`);
+            setMsg({correct: false, note: event.key});
         }
     }
 
