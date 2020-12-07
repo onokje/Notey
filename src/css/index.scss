@@ -5,12 +5,18 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #888;
+  background-color: #ddd;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
+}
+
+div.introduction{
+  background-color: #888;
+  padding: 20px;
+  margin: 1.3em auto;
 }
 
 @import 'music';

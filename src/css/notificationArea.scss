@@ -1,9 +1,16 @@
-div.notification_correct{
-  color: #060;
+%_notification_area {
+  margin: 1.3em auto;
   font-weight: bold;
+  text-align: center;
+}
+
+div.notification_correct{
+  @extend %_notification_area;
+  color: #060;
+
 }
 
 div.notification_incorrect{
+  @extend %_notification_area;
   color: #C00;
-  font-weight: bold;
 }

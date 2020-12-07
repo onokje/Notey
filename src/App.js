@@ -3,6 +3,7 @@ import Sheet from "./components/Sheet";
 import notes from './notes';
 import Mousetrap from 'mousetrap';
 import NotificationArea from "./components/NotificationArea";
+import Introduction from "./components/Introduction";
 
 const getRandomNote = () => {
     const randomI = Math.floor(Math.random() * Math.floor(notes.length));
@@ -40,19 +41,16 @@ function App() {
         return unbindKeys;
     },[currentNote]);
 
-    if (currentNote) {
-        return (
-            <div className="App">
-                <header className="App-header">
-                    Notey
-                </header>
-                <Sheet note={currentNote}/>
-                <NotificationArea msg={msg} />
-            </div>
-        );
-    } else {
-        return <div>Loading...</div>;
-    }
+    return (
+        <div className="App">
+            <header className="App-header">
+                Notey
+            </header>
+            <Introduction />
+            <Sheet note={currentNote}/>
+            <NotificationArea msg={msg} />
+        </div>
+    );
 
 }
 
